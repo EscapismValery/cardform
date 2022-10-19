@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+/* Обнуление */
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active,
+a:focus,
+a:active {
+	outline: none;
+}
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,
+a:hover,
+a:visited {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+/*--------------------*/
+:root {
+	--sizeindex: calc(1vw+1vh);
+}
+body {
+	background-color: #f0f0f0;
+}
+.app {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cardform {
+	display: flex;
+	width: 80vw;
+	height: 76vh;
+	font-family: "Space Grotesk", sans-serif;
+}
+.cards {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: calc(var(--sizeindex) * 2);
+	width: 30%;
+	height: 100%;
+	background: url(../images/bg-main-desktop.png) 50% 50% no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+.item-front {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: calc(var(--sizeindex) * 20);
+	height: calc(var(--sizeindex) * 11);
+	padding: calc(var(--sizeindex) * 1.3);
+	background: url(../images/bg-card-front.png) 0% 50% no-repeat;
+	background-size: contain;
+	transform: translateX(50%);
+}
+.item-back {
+	width: calc(var(--sizeindex) * 20);
+	height: calc(var(--sizeindex) * 11);
+	background: url(../images/bg-card-back.png) 0% 50% no-repeat;
+	background-size: contain;
+	transform: translateX(70%);
+}
+.cards__logo {
+	display: block;
+	width: calc(var(--sizeindex) * 2.2);
+	height: calc(var(--sizeindex) * 2.2);
+	background-color: #fff;
+	border-radius: 50%;
+}
+.cards__number {
+	margin-top: calc(var(--sizeindex) * 1.8);
+	width: 100%;
+}
+.cards__number p {
+	font-size: calc(var(--sizeindex) * 1.2);
+	letter-spacing: calc(var(--sizeindex) * 0.15);
+	word-spacing: calc(var(--sizeindex) * 0.3);
+}
+.cards__bottom {
+	display: flex;
+	justify-content: space-between;
+	font-size: calc(var(--sizeindex) * 0.6);
+	font-weight: 400;
+	letter-spacing: calc(var(--sizeindex) * 0.1);
+}
+.cards__name {
+	text-transform: uppercase;
+}
+.cards__cvc {
+	display: block;
+	position: absolute;
+	top: 46.5%;
+	left: 80%;
+	color: #fff;
+	font-size: calc(var(--sizeindex) * 0.7);
+	letter-spacing: calc(var(--sizeindex) * 0.08);
+	font-weight: 400;
+}
+.cardform__form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 5%;
+	width: 70%;
+	height: 100%;
+	background-color: #fff;
+}
+.form {
+	display: flex;
+	flex-direction: column;
+	width: calc(var(--sizeindex) * 26);
+}
+.form__title {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: calc(var(--sizeindex) * 0.8);
+	margin: 0 0 calc(var(--sizeindex) * 0.5) 0;
+	letter-spacing: calc(var(--sizeindex) * 0.06);
+}
+.form__datecvc {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+.form__date {
+	display: flex;
+	flex-direction: column;
+	margin: calc(var(--sizeindex) * 0.8) 0;
+	width: 45%;
+}
+.form__date-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+.form__date-container label {
+	margin: 0;
+	width: 48%;
+}
+.form__date-container p {
+	margin: 0;
+}
