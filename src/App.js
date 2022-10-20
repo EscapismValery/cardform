@@ -60,7 +60,7 @@ function App() {
 							}}
 							change={changeNumber}
 							oninput={"number"}
-							maxLength={"16"}
+							maxLength={"19"}
 						/>
 						<div className="form__datecvc">
 							<div className="form__date">

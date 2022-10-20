@@ -4,7 +4,12 @@
 	border: 1px solid #e8e8e8;
 	border-radius: 8px;
 	color: #999999;
+	font-weight: 500;
 	font-size: calc(var(--sizeindex) * 0.9);
+}
+.focus {
+	border: 1px solid #63589b;
+	color: #190a1e;
 }
 .myInput::placeholder {
 	color: #c8c8c8;
