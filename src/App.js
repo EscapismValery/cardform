@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import MyButton from './components/UI/button/MyButton';
 import MyLabel from './components/UI/label/MyLabel';
 import './styles/App.css';
@@ -10,7 +9,6 @@ function App() {
 	const [mouth, setMouth] = useState("");
 	const [year, setYear] = useState("");
 	const [cvc, setCvc] = useState("");
-	const { register, handleSubmit } = useForm();
 
 	const changeNumber = (num) => {
 		setNumber(num);
@@ -26,10 +24,6 @@ function App() {
 	}
 	const changeCvc = (num) => {
 		setCvc(num);
-	}
-
-	const onSubmit = (data) => {
-
 	}
 
 	return (
@@ -51,7 +45,7 @@ function App() {
 					</div>
 				</div>
 				<div className="cardform__form">
-					<form onSubmit={handleSubmit(onSubmit)} className="form">
+					<form className="form">
 						<MyLabel
 							title={"cardholder name"}
 							input={{ type: "text", name: 'cardname', placeholder: 'e.g. Jane Appleseed' }}
