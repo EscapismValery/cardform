@@ -1,7 +1,7 @@
 .container {
 	display: flex;
 	flex-direction: column;
-	margin: calc(var(--sizeindex) * 0.8) 0;
+	margin: calc(var(--sizeindex) * 1.4) 0 calc(var(--sizeindex) * 0.4);
 }
 .title {
 	font-weight: 700;

@@ -182,7 +182,8 @@ body {
 .form__date {
 	display: flex;
 	flex-direction: column;
-	margin: calc(var(--sizeindex) * 0.8) 0;
+	margin: calc(var(--sizeindex) * 1.4) 0 0 0;
+	height: 100%;
 	width: 45%;
 }
 .form__date-container {
@@ -196,4 +197,23 @@ body {
 }
 .form__date-container p {
 	margin: 0;
+}
+.form__date-error {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin: calc(var(--sizeindex) * 0.4) 0 0 0;
+}
+.form__date-error__month {
+	margin: 0;
+	width: 48%;
+}
+.form__cvc {
+	display: flex;
+	flex-direction: column;
+}
+.error {
+	font-size: calc(var(--sizeindex) * 0.6);
+	font-weight: 700;
+	color: #df4848;
 }

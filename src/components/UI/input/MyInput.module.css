@@ -11,6 +11,9 @@
 	border: 1px solid #63589b;
 	color: #190a1e;
 }
+.error {
+	border: 1px solid #df4848;
+}
 .myInput::placeholder {
-	color: #c8c8c8;
+	color: #c7c6cc;
 }

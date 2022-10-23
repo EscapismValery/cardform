@@ -1,7 +1,7 @@
 .myButton {
 	width: 100%;
 	padding: calc(var(--sizeindex) * 0.6);
-	margin: calc(var(--sizeindex) * 0.8) 0;
+	margin: calc(var(--sizeindex) * 1.4) 0;
 	border: 1px solid #220930;
 	border-radius: calc(var(--sizeindex) * 0.5);
 	color: #fff;
