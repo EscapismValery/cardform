@@ -1,76 +1,28 @@
 import { useState } from 'react';
-import MyButton from './components/UI/button/MyButton';
-import MyLabel from './components/UI/label/MyLabel';
+import { useForm } from "react-hook-form";
 import './styles/App.css';
 
 function App() {
 	const [number, setNumber] = useState("");
 	const [name, setName] = useState("");
-	const [mouth, setMouth] = useState("");
+	const [month, setMonth] = useState("");
 	const [year, setYear] = useState("");
 	const [cvc, setCvc] = useState("");
 
-	const changeNumber = (num) => {
-		setNumber(num);
-	}
-	const changeName = (num) => {
-		setName(num);
-	}
-	const changeMouth = (num) => {
-		setMouth(num);
-	}
-	const changeYear = (num) => {
-		setYear(num);
-	}
-	const changeCvc = (num) => {
-		setCvc(num);
-	}
+	const {
+		register,
+		formState: {
+			errors,
+		},
+		handleSubmit,
+		reset,
+	} = useForm({
+		mode: "All"
+	});
 
-	const [nameError, setNameError] = useState(false);
-	const [numberError, setNumberError] = useState(false);
-	const [monthError, setMonthError] = useState(false);
-	const [yearError, setYearError] = useState(false);
-	const [cvcError, setCvcError] = useState(false);
-
-	const [formatName, setFormatName] = useState("Wrong format");
-	const [blankName, setBlankName] = useState("Can't be blank");
-	const [formatNumber, setFormatNumber] = useState("Wrong format");
-	const [blankNumber, setBlankNumber] = useState("Can't be blank");
-	const [formatMonth, setFormatMonth] = useState("Wrong format");
-	const [blankMonth, setBlankMonth] = useState("Can't be blank");
-	const [formatYear, setFormatYear] = useState("Wrong format");
-	const [blankYear, setBlankYear] = useState("Can't be blank");
-	const [formatCvc, setFormatCvc] = useState("Wrong format");
-	const [blankCvc, setBlankCvc] = useState("Can't be blank");
-
-	const blurHandler = (e) => {
-		switch (e.name) {
-			case "cardname":
-				setNameError(true)
-				{ e.value ? setBlankName("") : setBlankName("Can't be blank") }
-				{ e.value.match(/[A-Za-zА-Яа-я]\s[A-Za-zА-Яа-я]/g) || !e.value ? setFormatName("") : setFormatName("Wrong format") }
-				break
-			case "cardnumber":
-				setNumberError(true)
-				{ e.value ? setBlankNumber("") : setBlankNumber("Can't be blank") }
-				{ e.value.length === 19 || !e.value ? setFormatNumber("") : setFormatNumber("Wrong format") }
-				break
-			case "mouth":
-				setMonthError(true)
-				{ e.value ? setBlankMonth("") : setBlankMonth("Can't be blank") }
-				{ e.value.length === 2 || !e.value ? setFormatMonth("") : setFormatMonth("Wrong format") }
-				break
-			case "year":
-				setYearError(true)
-				{ e.value ? setBlankYear("") : setBlankYear("Can't be blank") }
-				{ e.value.length === 2 || !e.value ? setFormatYear("") : setFormatYear("Wrong format") }
-				break
-			case "cvc":
-				setCvcError(true)
-				{ e.value ? setBlankCvc("") : setBlankCvc("Can't be blank") }
-				{ e.value.length === 3 || !e.value ? setFormatCvc("") : setFormatCvc("Wrong format") }
-				break
-		}
+	const onSubmit = (data) => {
+		alert(JSON.stringify(data))
+		reset()
 	}
 
 	return (
@@ -84,85 +36,150 @@ function App() {
 						</div>
 						<div className="cards__bottom">
 							<span className="cards__name">{name === "" ? "Jane Appleseed" : name}</span>
-							<span className="cards__date">{mouth === "" ? "00" : mouth}/{year === "" ? "00" : year}</span>
+							<span className="cards__date">{month === "" ? "00" : month}/{year === "" ? "00" : year}</span>
 						</div>
 					</div>
 					<div className="cards__item item-back">
 						<span className="cards__cvc">{cvc === "" ? "000" : cvc}</span>
 					</div>
 				</div>
+
 				<div className="cardform__form">
-					<form className="form">
-						<MyLabel
-							title={"cardholder name"}
-							input={{ type: "text", name: 'cardname', placeholder: 'e.g. Jane Appleseed' }}
-							change={changeName}
-							oninput={"text"}
-							maxLength={"23"}
-							errorBlur={blurHandler}
-							errorFormat={setFormatName}
-							errorBlank={setBlankName}
-						/>
-						{(nameError && formatName) && <div className='error'>{formatName}</div>}
-						{(nameError && blankName) && <div className='error'>{blankName}</div>}
-						<MyLabel
-							title={"card number"}
-							input={{
-								type: "text", name: 'cardnumber', placeholder: 'e.g. 1234 5678 9123 0000',
-							}}
-							change={changeNumber}
-							oninput={"number"}
-							maxLength={"19"}
-							errorBlur={blurHandler}
-						/>
-						{(numberError && formatNumber) && <div className='error'>{formatNumber}</div>}
-						{(numberError && blankNumber) && <div className='error'>{blankNumber}</div>}
+					<form onSubmit={handleSubmit(onSubmit)} className="form">
+						<label htmlFor="cardname">
+							<p className='form__title'>cardholder name</p>
+							<input
+								{...register('cardname', {
+									required: "Can't be blank",
+									pattern: {
+										value: /[A-Za-zА-Яа-я]\s[A-Za-zА-Яа-я]/g,
+										message: "Wrong format"
+									},
+									onChange: (e) => { setName(e.target.value) },
+
+								})}
+								className="form__input"
+								type="text"
+								name="cardname"
+								placeholder='e.g. Jane Appleseed'
+								maxLength={"23"}
+								onInput={e => {
+									const value = e.target.value;
+									e.target.value = value.replace(/[0-9]/, "");
+								}}
+							/>
+						</label>
+						{/* {errors?.cardname ? document.getElementsByName("cardname").classList.add("error-border") : document.getElementsByName("cardname").classList.remove("error-border")} */}
+						{errors?.cardname && <div className='error'>{errors?.cardname?.message || "Wrong format"}</div>}
+
+						<label htmlFor="cardnumber">
+							<p className='form__title'>card number</p>
+							<input
+								{...register('cardnumber', {
+									required: "Can't be blank",
+									minLength: {
+										value: 19,
+										message: "Wrong format"
+									},
+									onChange: (e) => setNumber(e.target.value)
+								})}
+								className='form__input'
+								type="text"
+								name="cardnumber"
+								placeholder='e.g. 1234 5678 9123 0000'
+								maxLength={"19"}
+								onInput={e => {
+									const value = e.target.value;
+									e.target.value = value.replace(/\D/g, "").match(/.{1,4}/g)?.join(" ").substr(0, 19) || ""
+								}}
+							/>
+						</label>
+						{errors?.cardnumber && <div className='error'>{errors?.cardnumber?.message || "Wrong format"}</div>}
+
 						<div className="form__datecvc">
 							<div className="form__date">
 								<p className="form__title">exp. date (mm/yy)</p>
 								<div className="form__date-container">
-									<MyLabel
-										title={""}
-										input={{ type: "text", name: 'mouth', placeholder: 'MM', }}
-										change={changeMouth}
-										oninput={"number"}
-										maxLength={"2"}
-										errorBlur={blurHandler}
-									/>
-									<MyLabel
-										title={""}
-										input={{ type: "text", name: 'year', placeholder: 'YY' }}
-										change={changeYear}
-										oninput={"number"}
-										maxLength={"2"}
-										errorBlur={blurHandler}
-									/>
+									<label htmlFor="month">
+										<input
+											{...register('month', {
+												required: "Can't be blank",
+												minLength: {
+													value: 2,
+													message: "Wrong format"
+												},
+												onChange: (e) => setMonth(e.target.value)
+											})}
+											className='form__input'
+											type="text"
+											name="month"
+											placeholder='MM'
+											maxLength={"2"}
+											onInput={e => {
+												const value = e.target.value;
+												e.target.value = value.replace(/\D/g, "")
+											}}
+										/>
+									</label>
+									<label htmlFor="year">
+										<input
+											{...register('year', {
+												required: "Can't be blank",
+												minLength: {
+													value: 2,
+													message: "Wrong format"
+												},
+												onChange: (e) => setYear(e.target.value)
+											})}
+											className='form__input'
+											type="text"
+											name="year"
+											placeholder='YY'
+											maxLength={"2"}
+											onInput={e => {
+												const value = e.target.value;
+												e.target.value = value.replace(/\D/g, "")
+											}}
+										/>
+									</label>
 								</div>
 								<div className='form__date-error'>
-									<div className='form__date-error__month'>
-										{(monthError && formatMonth) && <div className='error'>{formatMonth}</div>}
-										{(monthError && blankMonth) && <div className='error'>{blankMonth}</div>}
+									<div className='form__date-error-item'>
+										{errors?.month && <div className='error'>{errors?.month?.message || "Wrong format"}</div>}
 									</div>
-									<div className='form__date-error__month'>
-										{(yearError && formatYear) && <div className='error'>{formatYear}</div>}
-										{(yearError && blankYear) && <div className='error'>{blankYear}</div>}
+									<div className='form__date-error-item'>
+										{errors?.year && <div className='error'>{errors?.year?.message || "Wrong format"}</div>}
 									</div>
 								</div>
 							</div>
+
 							<div className='form__cvc'>
-								<MyLabel
-									title={"cvc"}
-									input={{ type: "text", name: 'cvc', placeholder: 'e.g. 123' }}
-									change={changeCvc}
-									oninput={"number"}
-									maxLength={"3"}
-									errorBlur={blurHandler}
-								/>
-								{(cvcError && formatCvc) && <div className='error'>{formatCvc}</div>}
-								{(cvcError && blankCvc) && <div className='error'>{blankCvc}</div>}
+								<label htmlFor="cvc">
+									<p className='form__title'>cvc</p>
+									<input
+										{...register('cvc', {
+											required: "Can't be blank",
+											minLength: {
+												value: 3,
+												message: "Wrong format"
+											},
+											onChange: (e) => setCvc(e.target.value)
+										})}
+										className='form__input'
+										type="text"
+										name="cvc"
+										placeholder='e.g. 123'
+										maxLength={"3"}
+										onInput={e => {
+											const value = e.target.value;
+											e.target.value = value.replace(/\D/g, "")
+										}}
+									/>
+								</label>
+								{errors?.cvc && <div className='error'>{errors?.cvc?.message || "Wrong format"}</div>}
 							</div>
 						</div>
-						<MyButton>Confirm</MyButton>
+						<input type="submit" value="Confirm" className="form__button" />
 					</form>
 				</div>
 			</div>
