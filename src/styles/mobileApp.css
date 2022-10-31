@@ -1,0 +1,221 @@
+@media screen and (max-width: 767px) {
+	.cardform {
+		flex-direction: column;
+		width: 100vw;
+		min-height: 100vh;
+	}
+	.cards {
+		width: 100%;
+		height: 40%;
+	}
+	.cardform__form {
+		width: 100%;
+		padding: 0;
+	}
+	.item-front {
+		position: absolute;
+		top: 40%;
+		left: 10%;
+		width: calc(var(--sizeindex) * 50);
+		height: calc(var(--sizeindex) * 27);
+		padding: calc(var(--sizeindex) * 3);
+		transform: translateX(0%);
+		background-size: cover;
+		border-radius: 6px;
+		z-index: 1;
+	}
+	.item-back {
+		position: absolute;
+		top: 15%;
+		right: 10%;
+		width: calc(var(--sizeindex) * 50);
+		height: calc(var(--sizeindex) * 27);
+		transform: translateX(0%);
+		background-size: cover;
+		border-radius: 6px;
+	}
+	.cards__logo {
+		width: calc(var(--sizeindex) * 4);
+		height: calc(var(--sizeindex) * 4);
+	}
+	.cards__number {
+		margin-top: calc(var(--sizeindex) * 5);
+		width: 100%;
+	}
+	.cards__number p {
+		font-size: calc(var(--sizeindex) * 3.7);
+		letter-spacing: calc(var(--sizeindex) * 0.25);
+		word-spacing: calc(var(--sizeindex) * 0.2);
+	}
+	.cards__bottom {
+		font-size: calc(var(--sizeindex) * 1.7);
+		letter-spacing: calc(var(--sizeindex) * 0.3);
+	}
+	.cards__cvc {
+		font-size: calc(var(--sizeindex) * 2);
+		letter-spacing: calc(var(--sizeindex) * 0.2);
+		left: 80%;
+	}
+	.form {
+		width: calc(var(--sizeindex) * 80);
+	}
+	.form label {
+		margin: calc(var(--sizeindex) * 3) 0 calc(var(--sizeindex) * 1);
+	}
+	.form__title {
+		font-size: calc(var(--sizeindex) * 1.9);
+		margin: 0 0 calc(var(--sizeindex) * 1) 0;
+		letter-spacing: calc(var(--sizeindex) * 0.2);
+	}
+	.form__input {
+		padding: calc(var(--sizeindex) * 1.6);
+		font-size: calc(var(--sizeindex) * 2.9);
+		border-radius: calc(var(--sizeindex) * 1.4);
+	}
+	.form__date {
+		margin: calc(var(--sizeindex) * 3) 0 0 0;
+		width: 48%;
+	}
+	.form__cvc {
+		width: 48%;
+	}
+	.form__date-container label {
+		margin: 0;
+		width: 48%;
+	}
+	.button {
+		padding: calc(var(--sizeindex) * 2.2);
+		margin: calc(var(--sizeindex) * 3.4) 0;
+		border-radius: calc(var(--sizeindex) * 1.4);
+		font-size: calc(var(--sizeindex) * 3.2);
+	}
+	.form__date-error {
+		margin: calc(var(--sizeindex) * 1) 0 0 0;
+	}
+	.error {
+		font-size: calc(var(--sizeindex) * 1.8);
+		font-weight: 700;
+		color: #df4848;
+	}
+	.success {
+		width: calc(var(--sizeindex) * 42);
+	}
+	.success__okay {
+		margin-bottom: calc(var(--sizeindex) * 1.7);
+		width: calc(var(--sizeindex) * 10);
+		height: calc(var(--sizeindex) * 10);
+		background: linear-gradient(-20deg, #540886, #6e4ffa);
+		border-radius: 50%;
+	}
+	.success__okay svg {
+		width: calc(var(--sizeindex) * 4.9);
+		height: calc(var(--sizeindex) * 4.9);
+	}
+	.success__thanks {
+		font-size: calc(var(--sizeindex) * 3.6);
+		letter-spacing: calc(var(--sizeindex) * 0.4);
+	}
+	.success__text {
+		font-size: calc(var(--sizeindex) * 1.9);
+		letter-spacing: calc(var(--sizeindex) * 0.03);
+		color: #848385;
+	}
+}
+@media screen and (max-width: 424px) {
+	.item-front {
+		top: 60%;
+		left: 5%;
+		width: calc(var(--sizeindex) * 75);
+		height: calc(var(--sizeindex) * 41);
+		padding: calc(var(--sizeindex) * 4.5);
+	}
+	.item-back {
+		top: 10%;
+		right: 5%;
+		width: calc(var(--sizeindex) * 75);
+		height: calc(var(--sizeindex) * 41);
+	}
+	.cards__logo {
+		width: calc(var(--sizeindex) * 7);
+		height: calc(var(--sizeindex) * 7);
+	}
+	.cards__number {
+		margin-top: calc(var(--sizeindex) * 6);
+	}
+	.cards__number p {
+		font-size: calc(var(--sizeindex) * 5);
+		letter-spacing: calc(var(--sizeindex) * 0.5);
+		word-spacing: calc(var(--sizeindex) * 0.8);
+	}
+	.cards__bottom {
+		font-size: calc(var(--sizeindex) * 2.5);
+		letter-spacing: calc(var(--sizeindex) * 0.5);
+	}
+	.cards__cvc {
+		font-size: calc(var(--sizeindex) * 3);
+		letter-spacing: calc(var(--sizeindex) * 0.2);
+		left: 81%;
+	}
+	.form {
+		width: calc(var(--sizeindex) * 86);
+		margin-top: 100px;
+	}
+	.form label {
+		margin: calc(var(--sizeindex) * 3.4) 0 calc(var(--sizeindex) * 1.4);
+	}
+	.form__title {
+		font-size: calc(var(--sizeindex) * 2.9);
+		margin: 0 0 calc(var(--sizeindex) * 1.4) 0;
+		letter-spacing: calc(var(--sizeindex) * 0.3);
+	}
+	.form__input {
+		padding: calc(var(--sizeindex) * 2.6);
+		font-size: calc(var(--sizeindex) * 3.9);
+		border-radius: calc(var(--sizeindex) * 2);
+	}
+	.form__date {
+		margin: calc(var(--sizeindex) * 3.4) 0 0 0;
+		width: 48%;
+	}
+	.form__cvc {
+		width: 48%;
+	}
+	.form__date-container label {
+		margin: 0;
+		width: 48%;
+	}
+	.button {
+		padding: calc(var(--sizeindex) * 3.2);
+		margin: calc(var(--sizeindex) * 2.4) 0;
+		border-radius: calc(var(--sizeindex) * 2);
+		font-size: calc(var(--sizeindex) * 4.2);
+	}
+	.form__date-error {
+		margin: calc(var(--sizeindex) * 1.4) 0 0 0;
+	}
+	.error {
+		font-size: calc(var(--sizeindex) * 2.2);
+		font-weight: 700;
+		color: #df4848;
+	}
+	.success {
+		width: calc(var(--sizeindex) * 62);
+	}
+	.success__okay {
+		margin-bottom: calc(var(--sizeindex) * 5.7);
+		width: calc(var(--sizeindex) * 15);
+		height: calc(var(--sizeindex) * 15);
+	}
+	.success__okay svg {
+		width: calc(var(--sizeindex) * 6.9);
+		height: calc(var(--sizeindex) * 6.9);
+	}
+	.success__thanks {
+		font-size: calc(var(--sizeindex) * 5.6);
+		letter-spacing: calc(var(--sizeindex) * 0.6);
+	}
+	.success__text {
+		font-size: calc(var(--sizeindex) * 2.9);
+		letter-spacing: calc(var(--sizeindex) * 0.03);
+	}
+}

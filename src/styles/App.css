@@ -183,7 +183,7 @@ body {
 	width: 100%;
 	padding: calc(var(--sizeindex) * 0.6);
 	border: 1px solid #e8e8e8;
-	border-radius: 8px;
+	border-radius: calc(var(--sizeindex) * 0.5);
 	color: #999999;
 	font-weight: 500;
 	font-size: calc(var(--sizeindex) * 0.9);
@@ -233,7 +233,7 @@ body {
 	display: flex;
 	flex-direction: column;
 }
-.form__button {
+.button {
 	width: 100%;
 	padding: calc(var(--sizeindex) * 0.6);
 	margin: calc(var(--sizeindex) * 1.4) 0;
@@ -245,13 +245,13 @@ body {
 	cursor: pointer;
 	transition: all ease 0.1s;
 }
-.form__button:hover {
+.button:hover {
 	border: 1px solid #451652;
 	color: #fff;
 	background-color: #451652;
 	letter-spacing: 1px;
 }
-.form__button:active {
+.button:active {
 	border: 1px solid #e8e8e8;
 	color: #999999;
 	background-color: #e8e8e8;
@@ -263,4 +263,42 @@ body {
 }
 .error-border {
 	border: 1px solid #df4848;
+}
+
+.success {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: calc(var(--sizeindex) * 22);
+}
+.success__okay {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: calc(var(--sizeindex) * 1.7);
+	width: calc(var(--sizeindex) * 4);
+	height: calc(var(--sizeindex) * 4);
+	background: linear-gradient(-20deg, #540886, #6e4ffa);
+	border-radius: 50%;
+}
+.success__okay svg {
+	width: calc(var(--sizeindex) * 1.9);
+	height: calc(var(--sizeindex) * 1.9);
+}
+.success__thanks {
+	display: block;
+	margin-bottom: calc(var(--sizeindex) * 1.2);
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: calc(var(--sizeindex) * 1.6);
+	letter-spacing: calc(var(--sizeindex) * 0.18);
+	color: #220930;
+}
+.success__text {
+	display: block;
+	margin-bottom: calc(var(--sizeindex) * 0.9);
+	font-weight: 500;
+	font-size: calc(var(--sizeindex) * 0.9);
+	letter-spacing: calc(var(--sizeindex) * 0.03);
+	color: #848385;
 }
