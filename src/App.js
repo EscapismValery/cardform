@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
-import './styles/App.css';
-import './styles/mobileApp.css';
+import './styles/app.css';
+import './styles/mobile-app.css';
 
 function App() {
 	const [number, setNumber] = useState("");
