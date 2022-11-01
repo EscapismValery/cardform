@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
-import './styles/app.css';
+import './styles/App.css';
 import './styles/mobile-app.css';
 
 function App() {
