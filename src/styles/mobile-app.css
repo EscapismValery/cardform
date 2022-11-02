@@ -1,4 +1,4 @@
-@media screen and (max-width: 1023px) {
+/* @media screen and (max-width: 1023px) {
 	.cardform {
 		display: flex;
 		width: 100vw;
@@ -311,4 +311,4 @@
 		font-size: calc(var(--sizeindex) * 2.9);
 		letter-spacing: calc(var(--sizeindex) * 0.03);
 	}
-}
+} */
