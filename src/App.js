@@ -131,7 +131,7 @@ function App() {
 												maxLength={"2"}
 												onInput={e => {
 													const value = e.target.value;
-													e.target.value = value.replace(/\D/g, "")
+													e.target.value = value.replace(/[^0-1+]/g, "")
 												}}
 											/>
 										</label>

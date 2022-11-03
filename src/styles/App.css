@@ -83,17 +83,16 @@ body {
 }
 .cardform {
 	display: flex;
-	width: 80vw;
-	height: 76vh;
+	width: 100vw;
+	height: 100vh;
 	font-family: "Space Grotesk", sans-serif;
-	box-shadow: 1px 1px 20px rgb(230, 230, 230);
 }
 .cards {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: calc(var(--sizeindex) * 2);
+	gap: calc(var(--sizeindex) * 4);
 	width: 30%;
 	height: 100%;
 	background: url(../images/bg-main-desktop.png) 50% 50% no-repeat;
@@ -104,42 +103,42 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: calc(var(--sizeindex) * 20);
-	height: calc(var(--sizeindex) * 11);
-	padding: calc(var(--sizeindex) * 1.3);
+	width: calc(var(--sizeindex) * 30);
+	height: calc(var(--sizeindex) * 16);
+	padding: calc(var(--sizeindex) * 2);
 	background: url(../images/bg-card-front.png) 0% 50% no-repeat;
 	background-size: contain;
-	transform: translateX(50%);
+	transform: translateX(30%);
 }
 .item-back {
-	width: calc(var(--sizeindex) * 20);
-	height: calc(var(--sizeindex) * 11);
+	width: calc(var(--sizeindex) * 30);
+	height: calc(var(--sizeindex) * 16);
 	background: url(../images/bg-card-back.png) 0% 50% no-repeat;
 	background-size: contain;
-	transform: translateX(70%);
+	transform: translateX(55%);
 }
 .cards__logo {
 	display: block;
-	width: calc(var(--sizeindex) * 2.2);
-	height: calc(var(--sizeindex) * 2.2);
+	width: calc(var(--sizeindex) * 3);
+	height: calc(var(--sizeindex) * 3);
 	background-color: #fff;
 	border-radius: 50%;
 }
 .cards__number {
-	margin-top: calc(var(--sizeindex) * 1.8);
+	margin-top: calc(var(--sizeindex) * 3);
 	width: 100%;
 }
 .cards__number p {
-	font-size: calc(var(--sizeindex) * 1.2);
-	letter-spacing: calc(var(--sizeindex) * 0.15);
-	word-spacing: calc(var(--sizeindex) * 0.3);
+	font-size: calc(var(--sizeindex) * 1.9);
+	letter-spacing: calc(var(--sizeindex) * 0.2);
+	word-spacing: calc(var(--sizeindex) * 0.2);
 }
 .cards__bottom {
 	display: flex;
 	justify-content: space-between;
-	font-size: calc(var(--sizeindex) * 0.6);
+	font-size: calc(var(--sizeindex) * 0.9);
+	letter-spacing: calc(var(--sizeindex) * 0.2);
 	font-weight: 400;
-	letter-spacing: calc(var(--sizeindex) * 0.1);
 }
 .cards__name {
 	text-transform: uppercase;
@@ -148,10 +147,10 @@ body {
 	display: block;
 	position: absolute;
 	top: 46.5%;
-	left: 80%;
+	left: 79%;
 	color: #fff;
-	font-size: calc(var(--sizeindex) * 0.7);
-	letter-spacing: calc(var(--sizeindex) * 0.08);
+	font-size: calc(var(--sizeindex) * 1);
+	letter-spacing: calc(var(--sizeindex) * 0.2);
 	font-weight: 400;
 }
 .cardform__form {
@@ -166,28 +165,28 @@ body {
 .form {
 	display: flex;
 	flex-direction: column;
-	width: calc(var(--sizeindex) * 26);
+	width: calc(var(--sizeindex) * 30);
 }
 .form label {
 	display: flex;
 	flex-direction: column;
-	margin: calc(var(--sizeindex) * 1.4) 0 calc(var(--sizeindex) * 0.4);
+	margin: calc(var(--sizeindex) * 1.8) 0 calc(var(--sizeindex) * 0.8);
 }
 .form__title {
 	font-weight: 700;
 	text-transform: uppercase;
-	font-size: calc(var(--sizeindex) * 0.8);
-	margin: 0 0 calc(var(--sizeindex) * 0.5) 0;
-	letter-spacing: calc(var(--sizeindex) * 0.06);
+	font-size: calc(var(--sizeindex) * 0.9);
+	margin: 0 0 calc(var(--sizeindex) * 0.8) 0;
+	letter-spacing: calc(var(--sizeindex) * 0.1);
 }
 .form__input {
 	width: 100%;
-	padding: calc(var(--sizeindex) * 0.6);
 	border: 1px solid #e8e8e8;
 	border-radius: calc(var(--sizeindex) * 0.5);
 	color: #999999;
 	font-weight: 500;
-	font-size: calc(var(--sizeindex) * 0.9);
+	padding: calc(var(--sizeindex) * 0.8);
+	font-size: calc(var(--sizeindex) * 1.2);
 }
 .focus {
 	border: 1px solid #63589b;
@@ -204,7 +203,7 @@ body {
 .form__date {
 	display: flex;
 	flex-direction: column;
-	margin: calc(var(--sizeindex) * 1.4) 0 0 0;
+	margin: calc(var(--sizeindex) * 1.8) 0 0 0;
 	height: 100%;
 	width: 45%;
 }
@@ -224,7 +223,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	margin: calc(var(--sizeindex) * 0.4) 0 0 0;
+	margin: calc(var(--sizeindex) * 0.8) 0 0 0;
 }
 .form__date-error-item {
 	margin: 0;
@@ -233,16 +232,17 @@ body {
 .form__cvc {
 	display: flex;
 	flex-direction: column;
+	width: 48%;
 }
 .button {
 	width: 100%;
-	padding: calc(var(--sizeindex) * 0.6);
-	margin: calc(var(--sizeindex) * 1.4) 0;
+	padding: calc(var(--sizeindex) * 1);
+	margin: calc(var(--sizeindex) * 1.8) 0;
 	border: 1px solid #220930;
 	border-radius: calc(var(--sizeindex) * 0.5);
 	color: #fff;
 	background-color: #220930;
-	font-size: calc(var(--sizeindex) * 0.9);
+	font-size: calc(var(--sizeindex) * 1.2);
 	cursor: pointer;
 	transition: all ease 0.1s;
 }
@@ -258,7 +258,7 @@ body {
 	background-color: #e8e8e8;
 }
 .error {
-	font-size: calc(var(--sizeindex) * 0.6);
+	font-size: calc(var(--sizeindex) * 0.7);
 	font-weight: 700;
 	color: #df4848;
 }
