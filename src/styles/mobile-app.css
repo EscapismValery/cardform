@@ -11,6 +11,7 @@
 		width: 100%;
 		min-height: 120px;
 		max-height: 280px;
+		margin-bottom: 140pxdepl;
 	}
 	.cardform__form {
 		width: 100%;
@@ -63,7 +64,7 @@
 	}
 	.form {
 		width: calc(var(--sizeindex) * 80);
-		margin-top: 140px;
+		/* margin-top: 140px; */
 	}
 	.form label {
 		margin: calc(var(--sizeindex) * 3) 0 calc(var(--sizeindex) * 1);
