@@ -4,6 +4,7 @@
 	}
 	.cardform {
 		flex-direction: column;
+		justify-content: space-between;
 		width: 100vw;
 		min-height: 100vh;
 	}
@@ -15,7 +16,7 @@
 	}
 	.cardform__form {
 		width: 100%;
-		height: auto;
+		min-height: 300px;
 		padding: 0;
 	}
 	.item-front {
@@ -233,6 +234,9 @@
 @media screen and (max-height: 550px) {
 	.cards {
 		margin-bottom: 40px;
+	}
+	.cardform__form {
+		min-height: 300px;
 	}
 	.item-front {
 		position: static;
