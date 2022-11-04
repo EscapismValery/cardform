@@ -117,11 +117,24 @@ body {
 	background-size: contain;
 	transform: translateX(55%);
 }
+.card__icons {
+	display: flex;
+	gap: calc(var(--sizeindex) * 1.1);
+	align-items: center;
+}
 .cards__logo {
 	display: block;
 	width: calc(var(--sizeindex) * 3);
 	height: calc(var(--sizeindex) * 3);
 	background-color: #fff;
+	border-radius: 50%;
+}
+.cards__logo-mini {
+	display: block;
+	width: calc(var(--sizeindex) * 1.5);
+	height: calc(var(--sizeindex) * 1.5);
+	background-color: transparent;
+	border: 1px solid #fff;
 	border-radius: 50%;
 }
 .cards__number {

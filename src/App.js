@@ -33,7 +33,10 @@ function App() {
 			<div className="cardform">
 				<div className="cardform__cards cards">
 					<div className="cards__item item-front">
-						<span className="cards__logo"></span>
+						<div className='card__icons'>
+							<span className="cards__logo"></span>
+							<span className="cards__logo-mini"></span>
+						</div>
 						<div className="cards__number">
 							<p>{number === "" ? "1234 5678 9123 0000" : number}</p>
 						</div>
