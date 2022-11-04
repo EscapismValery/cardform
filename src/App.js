@@ -59,7 +59,7 @@ function App() {
 						</div>
 						: <form onSubmit={handleSubmit(onSubmit)} className="form">
 							<label htmlFor="cardname">
-								<p className='form__title'>cardholder name</p>
+								<span className='form__title'>cardholder name</span>
 								<input
 									{...register('cardname', {
 										required: "Can't be blank",
@@ -87,7 +87,7 @@ function App() {
 							{errors?.cardname && <div className='error'>{errors?.cardname?.message || "Wrong format"}</div>}
 
 							<label htmlFor="cardnumber">
-								<p className='form__title'>card number</p>
+								<span className='form__title'>card number</span>
 								<input
 									{...register('cardnumber', {
 										required: "Can't be blank",
@@ -100,6 +100,7 @@ function App() {
 									className={errors?.cardnumber && "form__input error-border" || "form__input"}
 									type="text"
 									name="cardnumber"
+									id='cardnumber'
 									placeholder='e.g. 1234 5678 9123 0000'
 									maxLength={"19"}
 									onInput={e => {
@@ -112,7 +113,7 @@ function App() {
 
 							<div className="form__datecvc">
 								<div className="form__date">
-									<p className="form__title">exp. date (mm/yy)</p>
+									<span className="form__title">exp. date (mm/yy)</span>
 									<div className="form__date-container">
 										<label htmlFor="month">
 											<input
@@ -127,6 +128,7 @@ function App() {
 												className={errors?.month && "form__input error-border" || "form__input"}
 												type="text"
 												name="month"
+												id='month'
 												placeholder='MM'
 												maxLength={"2"}
 												onInput={e => {
@@ -148,6 +150,7 @@ function App() {
 												className={errors?.year && "form__input error-border" || "form__input"}
 												type="text"
 												name="year"
+												id='year'
 												placeholder='YY'
 												maxLength={"2"}
 												onInput={e => {
@@ -169,7 +172,7 @@ function App() {
 
 								<div className='form__cvc'>
 									<label htmlFor="cvc">
-										<p className='form__title'>cvc</p>
+										<span className='form__title'>cvc</span>
 										<input
 											{...register('cvc', {
 												required: "Can't be blank",
@@ -182,6 +185,7 @@ function App() {
 											className={errors?.cvc && "form__input error-border" || "form__input"}
 											type="text"
 											name="cvc"
+											id='cvc'
 											placeholder='e.g. 123'
 											maxLength={"3"}
 											onInput={e => {
