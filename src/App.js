@@ -124,8 +124,11 @@ function App() {
 													required: "Can't be blank",
 													minLength: {
 														value: 2,
-														message: "Wrong format"
+														message: "Wrong format",
 													},
+													validate: value => value === '01' || value === '02' || value === '03' || value === '04'
+														|| value === '05' || value === '06' || value === '07' || value === '08'
+														|| value === '09' || value === '10' || value === '11' || value === '12',
 													onChange: (e) => setMonth(e.target.value)
 												})}
 												className={errors?.month && "form__input error-border" || "form__input"}
@@ -136,7 +139,7 @@ function App() {
 												maxLength={"2"}
 												onInput={e => {
 													const value = e.target.value;
-													e.target.value = value.replace(/[^0-1+]/g, "")
+													e.target.value = value.replace(/\D/g, "")
 												}}
 											/>
 										</label>
@@ -148,6 +151,7 @@ function App() {
 														value: 2,
 														message: "Wrong format"
 													},
+													validate: value => value > '21' && value < '30',
 													onChange: (e) => setYear(e.target.value)
 												})}
 												className={errors?.year && "form__input error-border" || "form__input"}

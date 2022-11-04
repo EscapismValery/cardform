@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/cardform/static/css/main.a80e0543.css",
-    "main.js": "/cardform/static/js/main.3f2dc76a.js",
+    "main.css": "/cardform/static/css/main.43fcbb08.css",
+    "main.js": "/cardform/static/js/main.544fa8b3.js",
     "static/media/bg-main-desktop.png": "/cardform/static/media/bg-main-desktop.806e7aa7b4dbc1d78bc3.png",
     "static/media/bg-card-back.png": "/cardform/static/media/bg-card-back.23f68fa3aa3d5b33dfc8.png",
     "static/media/bg-card-front.png": "/cardform/static/media/bg-card-front.8153e2ca184402a8385f.png",
     "index.html": "/cardform/index.html",
-    "main.a80e0543.css.map": "/cardform/static/css/main.a80e0543.css.map",
-    "main.3f2dc76a.js.map": "/cardform/static/js/main.3f2dc76a.js.map"
+    "main.43fcbb08.css.map": "/cardform/static/css/main.43fcbb08.css.map",
+    "main.544fa8b3.js.map": "/cardform/static/js/main.544fa8b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.a80e0543.css",
-    "static/js/main.3f2dc76a.js"
+    "static/css/main.43fcbb08.css",
+    "static/js/main.544fa8b3.js"
   ]
 }
